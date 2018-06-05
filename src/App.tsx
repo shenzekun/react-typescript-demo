@@ -8,6 +8,7 @@ import { NameProvider } from './components/name-provider';
 import { StatefulCounterWithDefault } from './components/stateful-counter-with-default';
 import { GenericList } from './components/generic-list';
 import { User } from './models/user';
+import { withState } from './hoc/with-state';
 
 const users = [
     new User('Rosamonte', 'Especial'),
@@ -15,6 +16,7 @@ const users = [
     new User('Taragui', 'Vitality')
 ];
 
+const SFCCounterWithState = withState(SFCCounter);
 class App extends React.Component {
     public state = { count: 0 };
     public render() {
@@ -32,6 +34,8 @@ class App extends React.Component {
                 <hr />
                 <StatefulCounterWithDefault label="无状态计数组件带默认值" initialCount={1} />
                 <hr />
+                <SFCCounterWithState label="高阶组件计数组件"/>
+                <hr/>
                 <MouseProvider
                     render={mouse => (
                         <p>
