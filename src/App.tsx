@@ -9,6 +9,7 @@ import { StatefulCounterWithDefault } from './components/stateful-counter-with-d
 import { GenericList } from './components/generic-list';
 import { User } from './models/user';
 import { withState } from './hoc/with-state';
+import Counter from './connected/sfc-counter-connected';
 
 const users = [
     new User('Rosamonte', 'Especial'),
@@ -34,8 +35,10 @@ class App extends React.Component {
                 <hr />
                 <StatefulCounterWithDefault label="无状态计数组件带默认值" initialCount={1} />
                 <hr />
-                <SFCCounterWithState label="高阶组件计数组件"/>
-                <hr/>
+                <SFCCounterWithState label="高阶无状态计数组件" />
+                <hr />
+                <Counter label="连接reudx的无状态计数组件"/>
+                <hr />
                 <MouseProvider
                     render={mouse => (
                         <p>
