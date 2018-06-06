@@ -5,6 +5,7 @@ import {SFCCounter} from '../components/sfc-counter';
 function mapDispatchToProps(dispatch: Dispatch<Actions.IAll>) {
     return {
         onIncrement: () => dispatch(Actions.increment()),
+        onDecrement: () => dispatch(Actions.decrement())
     };
 }
 

@@ -29,6 +29,9 @@ class App extends React.Component {
                     onIncrement={() => {
                         this.setState({ count: this.state.count + 1 });
                     }}
+                    onDecrement={() => {
+                        this.setState({ count: this.state.count - 1 });
+                    }}
                 />
                 <hr />
                 <StatefulCounter label="状态计数组件" />
@@ -37,7 +40,7 @@ class App extends React.Component {
                 <hr />
                 <SFCCounterWithState label="高阶无状态计数组件" />
                 <hr />
-                <Counter label="连接reudx的无状态计数组件"/>
+                <Counter label="连接reudx的无状态计数组件" />
                 <hr />
                 <MouseProvider
                     render={mouse => (
